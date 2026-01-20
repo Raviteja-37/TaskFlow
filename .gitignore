@@ -2,6 +2,21 @@
 # General / Root-level
 # =========================
 
+
+# =========================
+# Node
+# =========================
+node_modules/
+**/node_modules/
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+!.env.example
+
+
 # Node modules (backend & frontend)
 taskflow-backend/node_modules/
 taskflow-frontend/node_modules/
