@@ -8,9 +8,24 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:5173', // local dev
+  'https://taskflowfrontend-3ssg.onrender.com', // deployed frontend
+];
+
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: function (origin, callback) {
+      // allow requests with no origin like mobile apps or curl
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // if you are using cookies or Authorization headers
   }),
 );
 
