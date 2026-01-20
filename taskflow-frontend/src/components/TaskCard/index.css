@@ -1,0 +1,77 @@
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  background: #334155;
+}
+
+/* TASK TITLE WRAPPER */
+.task-title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f9;
+  word-break: break-word;
+  line-height: 1.5; /* ensures vertical centering */
+}
+
+/* COMPLETED TASK */
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: #22c55e;
+}
+
+/* TASK ACTIONS */
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* DONE / PENDING */
+.task-actions button:first-child {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.task-actions button:first-child:hover:not(:disabled) {
+  background: #0ea5e9;
+}
+
+/* DELETE */
+.task-actions button:last-child {
+  background: #ef4444;
+  color: #fff;
+}
+
+.task-actions button:last-child:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.task-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

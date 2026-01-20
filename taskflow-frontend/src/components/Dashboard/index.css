@@ -1,0 +1,36 @@
+/* SAFETY */
+* {
+  box-sizing: border-box;
+}
+
+/* DASHBOARD CONTAINER */
+.dashboard-container {
+  min-height: calc(100vh - 64px);
+  min-width: 100vw; /* navbar height */
+  background-color: #020617;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  color: #e5e7eb;
+}
+
+/* LEFT: PROFILE */
+.dashboard-container > :first-child {
+  flex: 0 0 280px;
+}
+
+/* RIGHT: TASKS */
+.dashboard-container > :last-child {
+  flex: 1;
+}
+
+/* RESPONSIVE (MOBILE) */
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .dashboard-container > :first-child {
+    width: 100%;
+  }
+}

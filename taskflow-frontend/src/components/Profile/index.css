@@ -1,0 +1,127 @@
+/* PROFILE CARD */
+.profile-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* MAIN AVATAR */
+.profile-card .main-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #38bdf8;
+}
+
+/* NAME */
+.profile-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 4px;
+}
+
+/* EMAIL */
+.profile-card p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+
+/* AVATAR PICKER */
+.avatar-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: center;
+  position: relative;
+}
+
+/* PICKER AVATAR */
+.avatar-options .picker-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.avatar-options .picker-avatar:hover {
+  transform: scale(1.1);
+  border-color: #38bdf8;
+}
+
+/* ACTIVE AVATAR */
+.picker-avatar.active {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
+}
+
+/* AVATAR LOADER OVERLAY */
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* BUTTON LOADER */
+.button-loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+/* FULLSCREEN LOADER */
+.fullscreen-loader {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.fullscreen-loader p {
+  margin-top: 16px;
+  color: #f8fafc;
+  font-size: 16px;
+}
+
+/* SPIN ANIMATION */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

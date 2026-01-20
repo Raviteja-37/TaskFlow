@@ -1,0 +1,76 @@
+@baseUrl = http://127.0.0.1:4000
+
+
+
+### Register User
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Ravi",
+  "email": "ravi@test.com",
+  "password": "password123",
+  "gender": "male"
+}
+
+
+
+### Login User
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ravi@test.com",
+  "password": "password123"
+}
+
+
+
+### Create Task
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmUwYzk2OGQ3NzFlODM2MTJjZjVjZSIsImlhdCI6MTc2ODgyNjA4NywiZXhwIjoxNzY4ODI5Njg3fQ.-Tf2kHBZdNILfasaW7LsHySI1UBvxRBjt2_Cgiu0SlE
+
+{
+  "title": "Complete backend setup"
+}
+
+
+
+### Get Tasks
+GET {{baseUrl}}/api/tasks?search=backend
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmUwYzk2OGQ3NzFlODM2MTJjZjVjZSIsImlhdCI6MTc2ODgyNjA4NywiZXhwIjoxNzY4ODI5Njg3fQ.-Tf2kHBZdNILfasaW7LsHySI1UBvxRBjt2_Cgiu0SlE
+
+### Get
+GET {{baseUrl}}/api/tasks?status=completed
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmUwYzk2OGQ3NzFlODM2MTJjZjVjZSIsImlhdCI6MTc2ODgyNjA4NywiZXhwIjoxNzY4ODI5Njg3fQ.-Tf2kHBZdNILfasaW7LsHySI1UBvxRBjt2_Cgiu0SlE
+
+
+
+### Update Task
+PUT {{baseUrl}}/api/tasks/696e210296be572fbdc69acd
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmUwYzk2OGQ3NzFlODM2MTJjZjVjZSIsImlhdCI6MTc2ODgyNjA4NywiZXhwIjoxNzY4ODI5Njg3fQ.-Tf2kHBZdNILfasaW7LsHySI1UBvxRBjt2_Cgiu0SlE
+
+{
+  "completed": true
+}
+
+### Update avatar
+PUT {{baseUrl}}/api/user/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmUwYzk2OGQ3NzFlODM2MTJjZjVjZSIsImlhdCI6MTc2ODgyNjA4NywiZXhwIjoxNzY4ODI5Njg3fQ.-Tf2kHBZdNILfasaW7LsHySI1UBvxRBjt2_Cgiu0SlE
+Content-Type: application/json
+
+{
+  "avatar": "male1",
+  "name": "Ravi Teja"
+}
+
+
+### Delete Task
+DELETE {{baseUrl}}/api/tasks/696e17d9b9dc36c497f60c12
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmUwYzk2OGQ3NzFlODM2MTJjZjVjZSIsImlhdCI6MTc2ODgyNjA4NywiZXhwIjoxNzY4ODI5Njg3fQ.-Tf2kHBZdNILfasaW7LsHySI1UBvxRBjt2_Cgiu0SlE
+
+
+### Unauthorized Access Test
+GET {{baseUrl}}/api/tasks
